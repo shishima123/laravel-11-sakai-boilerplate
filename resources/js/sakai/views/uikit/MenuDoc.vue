@@ -15,19 +15,19 @@ const nestedMenuitems = ref([
                 items: [
                     {
                         label: 'Customer',
-                        icon: 'pi pi-fw pi-plus'
+                        icon: 'pi pi-fw pi-plus',
                     },
                     {
                         label: 'Duplicate',
-                        icon: 'pi pi-fw pi-copy'
-                    }
-                ]
+                        icon: 'pi pi-fw pi-copy',
+                    },
+                ],
             },
             {
                 label: 'Edit',
-                icon: 'pi pi-fw pi-user-edit'
-            }
-        ]
+                icon: 'pi pi-fw pi-user-edit',
+            },
+        ],
     },
     {
         label: 'Orders',
@@ -35,13 +35,13 @@ const nestedMenuitems = ref([
         items: [
             {
                 label: 'View',
-                icon: 'pi pi-fw pi-list'
+                icon: 'pi pi-fw pi-list',
             },
             {
                 label: 'Search',
-                icon: 'pi pi-fw pi-search'
-            }
-        ]
+                icon: 'pi pi-fw pi-search',
+            },
+        ],
     },
     {
         label: 'Shipments',
@@ -49,17 +49,17 @@ const nestedMenuitems = ref([
         items: [
             {
                 label: 'Tracker',
-                icon: 'pi pi-fw pi-compass'
+                icon: 'pi pi-fw pi-compass',
             },
             {
                 label: 'Map',
-                icon: 'pi pi-fw pi-map-marker'
+                icon: 'pi pi-fw pi-map-marker',
             },
             {
                 label: 'Manage',
-                icon: 'pi pi-fw pi-pencil'
-            }
-        ]
+                icon: 'pi pi-fw pi-pencil',
+            },
+        ],
     },
     {
         label: 'Profile',
@@ -67,21 +67,27 @@ const nestedMenuitems = ref([
         items: [
             {
                 label: 'Settings',
-                icon: 'pi pi-fw pi-cog'
+                icon: 'pi pi-fw pi-cog',
             },
             {
                 label: 'Billing',
-                icon: 'pi pi-fw pi-file'
-            }
-        ]
+                icon: 'pi pi-fw pi-file',
+            },
+        ],
     },
     {
         label: 'Quit',
-        icon: 'pi pi-fw pi-sign-out'
-    }
+        icon: 'pi pi-fw pi-sign-out',
+    },
 ]);
 const breadcrumbHome = ref({ icon: 'pi pi-home', to: '/' });
-const breadcrumbItems = ref([{ label: 'Computer' }, { label: 'Notebook' }, { label: 'Accessories' }, { label: 'Backpacks' }, { label: 'Item' }]);
+const breadcrumbItems = ref([
+    { label: 'Computer' },
+    { label: 'Notebook' },
+    { label: 'Accessories' },
+    { label: 'Backpacks' },
+    { label: 'Item' },
+]);
 const tieredMenuItems = ref([
     {
         label: 'Customers',
@@ -93,19 +99,19 @@ const tieredMenuItems = ref([
                 items: [
                     {
                         label: 'Customer',
-                        icon: 'pi pi-fw pi-plus'
+                        icon: 'pi pi-fw pi-plus',
                     },
                     {
                         label: 'Duplicate',
-                        icon: 'pi pi-fw pi-copy'
-                    }
-                ]
+                        icon: 'pi pi-fw pi-copy',
+                    },
+                ],
             },
             {
                 label: 'Edit',
-                icon: 'pi pi-fw pi-user-edit'
-            }
-        ]
+                icon: 'pi pi-fw pi-user-edit',
+            },
+        ],
     },
     {
         label: 'Orders',
@@ -113,13 +119,13 @@ const tieredMenuItems = ref([
         items: [
             {
                 label: 'View',
-                icon: 'pi pi-fw pi-list'
+                icon: 'pi pi-fw pi-list',
             },
             {
                 label: 'Search',
-                icon: 'pi pi-fw pi-search'
-            }
-        ]
+                icon: 'pi pi-fw pi-search',
+            },
+        ],
     },
     {
         label: 'Shipments',
@@ -127,17 +133,17 @@ const tieredMenuItems = ref([
         items: [
             {
                 label: 'Tracker',
-                icon: 'pi pi-fw pi-compass'
+                icon: 'pi pi-fw pi-compass',
             },
             {
                 label: 'Map',
-                icon: 'pi pi-fw pi-map-marker'
+                icon: 'pi pi-fw pi-map-marker',
             },
             {
                 label: 'Manage',
-                icon: 'pi pi-fw pi-pencil'
-            }
-        ]
+                icon: 'pi pi-fw pi-pencil',
+            },
+        ],
     },
     {
         label: 'Profile',
@@ -145,42 +151,42 @@ const tieredMenuItems = ref([
         items: [
             {
                 label: 'Settings',
-                icon: 'pi pi-fw pi-cog'
+                icon: 'pi pi-fw pi-cog',
             },
             {
                 label: 'Billing',
-                icon: 'pi pi-fw pi-file'
-            }
-        ]
+                icon: 'pi pi-fw pi-file',
+            },
+        ],
     },
     {
-        separator: true
+        separator: true,
     },
     {
         label: 'Quit',
-        icon: 'pi pi-fw pi-sign-out'
-    }
+        icon: 'pi pi-fw pi-sign-out',
+    },
 ]);
 const overlayMenuItems = ref([
     {
         label: 'Save',
-        icon: 'pi pi-save'
+        icon: 'pi pi-save',
     },
     {
         label: 'Update',
-        icon: 'pi pi-refresh'
+        icon: 'pi pi-refresh',
     },
     {
         label: 'Delete',
-        icon: 'pi pi-trash'
+        icon: 'pi pi-trash',
     },
     {
-        separator: true
+        separator: true,
     },
     {
         label: 'Home',
-        icon: 'pi pi-home'
-    }
+        icon: 'pi pi-home',
+    },
 ]);
 const menuitems = ref([
     {
@@ -188,48 +194,48 @@ const menuitems = ref([
         items: [
             {
                 label: 'New',
-                icon: 'pi pi-fw pi-plus'
+                icon: 'pi pi-fw pi-plus',
             },
             {
                 label: 'Edit',
-                icon: 'pi pi-fw pi-user-edit'
-            }
-        ]
+                icon: 'pi pi-fw pi-user-edit',
+            },
+        ],
     },
     {
         label: 'Orders',
         items: [
             {
                 label: 'View',
-                icon: 'pi pi-fw pi-list'
+                icon: 'pi pi-fw pi-list',
             },
             {
                 label: 'Search',
-                icon: 'pi pi-fw pi-search'
-            }
-        ]
-    }
+                icon: 'pi pi-fw pi-search',
+            },
+        ],
+    },
 ]);
 const contextMenuItems = ref([
     {
         label: 'Save',
-        icon: 'pi pi-save'
+        icon: 'pi pi-save',
     },
     {
         label: 'Update',
-        icon: 'pi pi-refresh'
+        icon: 'pi pi-refresh',
     },
     {
         label: 'Delete',
-        icon: 'pi pi-trash'
+        icon: 'pi pi-trash',
     },
     {
-        separator: true
+        separator: true,
     },
     {
         label: 'Options',
-        icon: 'pi pi-cog'
-    }
+        icon: 'pi pi-cog',
+    },
 ]);
 const megamenuItems = ref([
     {
@@ -239,24 +245,36 @@ const megamenuItems = ref([
             [
                 {
                     label: 'Woman',
-                    items: [{ label: 'Woman Item' }, { label: 'Woman Item' }, { label: 'Woman Item' }]
+                    items: [
+                        { label: 'Woman Item' },
+                        { label: 'Woman Item' },
+                        { label: 'Woman Item' },
+                    ],
                 },
                 {
                     label: 'Men',
-                    items: [{ label: 'Men Item' }, { label: 'Men Item' }, { label: 'Men Item' }]
-                }
+                    items: [
+                        { label: 'Men Item' },
+                        { label: 'Men Item' },
+                        { label: 'Men Item' },
+                    ],
+                },
             ],
             [
                 {
                     label: 'Kids',
-                    items: [{ label: 'Kids Item' }, { label: 'Kids Item' }]
+                    items: [{ label: 'Kids Item' }, { label: 'Kids Item' }],
                 },
                 {
                     label: 'Luggage',
-                    items: [{ label: 'Luggage Item' }, { label: 'Luggage Item' }, { label: 'Luggage Item' }]
-                }
-            ]
-        ]
+                    items: [
+                        { label: 'Luggage Item' },
+                        { label: 'Luggage Item' },
+                        { label: 'Luggage Item' },
+                    ],
+                },
+            ],
+        ],
     },
     {
         label: 'Electronics',
@@ -265,30 +283,41 @@ const megamenuItems = ref([
             [
                 {
                     label: 'Computer',
-                    items: [{ label: 'Computer Item' }, { label: 'Computer Item' }]
+                    items: [
+                        { label: 'Computer Item' },
+                        { label: 'Computer Item' },
+                    ],
                 },
                 {
                     label: 'Camcorder',
-                    items: [{ label: 'Camcorder Item' }, { label: 'Camcorder Item' }, { label: 'Camcorder Item' }]
-                }
+                    items: [
+                        { label: 'Camcorder Item' },
+                        { label: 'Camcorder Item' },
+                        { label: 'Camcorder Item' },
+                    ],
+                },
             ],
             [
                 {
                     label: 'TV',
-                    items: [{ label: 'TV Item' }, { label: 'TV Item' }]
+                    items: [{ label: 'TV Item' }, { label: 'TV Item' }],
                 },
                 {
                     label: 'Audio',
-                    items: [{ label: 'Audio Item' }, { label: 'Audio Item' }, { label: 'Audio Item' }]
-                }
+                    items: [
+                        { label: 'Audio Item' },
+                        { label: 'Audio Item' },
+                        { label: 'Audio Item' },
+                    ],
+                },
             ],
             [
                 {
                     label: 'Sports.7',
-                    items: [{ label: 'Sports.7.1' }, { label: 'Sports.7.2' }]
-                }
-            ]
-        ]
+                    items: [{ label: 'Sports.7.1' }, { label: 'Sports.7.2' }],
+                },
+            ],
+        ],
     },
     {
         label: 'Furniture',
@@ -297,24 +326,38 @@ const megamenuItems = ref([
             [
                 {
                     label: 'Living Room',
-                    items: [{ label: 'Living Room Item' }, { label: 'Living Room Item' }]
+                    items: [
+                        { label: 'Living Room Item' },
+                        { label: 'Living Room Item' },
+                    ],
                 },
                 {
                     label: 'Kitchen',
-                    items: [{ label: 'Kitchen Item' }, { label: 'Kitchen Item' }, { label: 'Kitchen Item' }]
-                }
+                    items: [
+                        { label: 'Kitchen Item' },
+                        { label: 'Kitchen Item' },
+                        { label: 'Kitchen Item' },
+                    ],
+                },
             ],
             [
                 {
                     label: 'Bedroom',
-                    items: [{ label: 'Bedroom Item' }, { label: 'Bedroom Item' }]
+                    items: [
+                        { label: 'Bedroom Item' },
+                        { label: 'Bedroom Item' },
+                    ],
                 },
                 {
                     label: 'Outdoor',
-                    items: [{ label: 'Outdoor Item' }, { label: 'Outdoor Item' }, { label: 'Outdoor Item' }]
-                }
-            ]
-        ]
+                    items: [
+                        { label: 'Outdoor Item' },
+                        { label: 'Outdoor Item' },
+                        { label: 'Outdoor Item' },
+                    ],
+                },
+            ],
+        ],
     },
     {
         label: 'Sports',
@@ -323,21 +366,28 @@ const megamenuItems = ref([
             [
                 {
                     label: 'Basketball',
-                    items: [{ label: 'Basketball Item' }, { label: 'Basketball Item' }]
+                    items: [
+                        { label: 'Basketball Item' },
+                        { label: 'Basketball Item' },
+                    ],
                 },
                 {
                     label: 'Football',
-                    items: [{ label: 'Football Item' }, { label: 'Football Item' }, { label: 'Football Item' }]
-                }
+                    items: [
+                        { label: 'Football Item' },
+                        { label: 'Football Item' },
+                        { label: 'Football Item' },
+                    ],
+                },
             ],
             [
                 {
                     label: 'Tennis',
-                    items: [{ label: 'Tennis Item' }, { label: 'Tennis Item' }]
-                }
-            ]
-        ]
-    }
+                    items: [{ label: 'Tennis Item' }, { label: 'Tennis Item' }],
+                },
+            ],
+        ],
+    },
 ]);
 const panelMenuitems = ref([
     {
@@ -350,19 +400,19 @@ const panelMenuitems = ref([
                 items: [
                     {
                         label: 'Customer',
-                        icon: 'pi pi-fw pi-plus'
+                        icon: 'pi pi-fw pi-plus',
                     },
                     {
                         label: 'Duplicate',
-                        icon: 'pi pi-fw pi-copy'
-                    }
-                ]
+                        icon: 'pi pi-fw pi-copy',
+                    },
+                ],
             },
             {
                 label: 'Edit',
-                icon: 'pi pi-fw pi-user-edit'
-            }
-        ]
+                icon: 'pi pi-fw pi-user-edit',
+            },
+        ],
     },
     {
         label: 'Orders',
@@ -370,13 +420,13 @@ const panelMenuitems = ref([
         items: [
             {
                 label: 'View',
-                icon: 'pi pi-fw pi-list'
+                icon: 'pi pi-fw pi-list',
             },
             {
                 label: 'Search',
-                icon: 'pi pi-fw pi-search'
-            }
-        ]
+                icon: 'pi pi-fw pi-search',
+            },
+        ],
     },
     {
         label: 'Shipments',
@@ -384,17 +434,17 @@ const panelMenuitems = ref([
         items: [
             {
                 label: 'Tracker',
-                icon: 'pi pi-fw pi-compass'
+                icon: 'pi pi-fw pi-compass',
             },
             {
                 label: 'Map',
-                icon: 'pi pi-fw pi-map-marker'
+                icon: 'pi pi-fw pi-map-marker',
             },
             {
                 label: 'Manage',
-                icon: 'pi pi-fw pi-pencil'
-            }
-        ]
+                icon: 'pi pi-fw pi-pencil',
+            },
+        ],
     },
     {
         label: 'Profile',
@@ -402,14 +452,14 @@ const panelMenuitems = ref([
         items: [
             {
                 label: 'Settings',
-                icon: 'pi pi-fw pi-cog'
+                icon: 'pi pi-fw pi-cog',
             },
             {
                 label: 'Billing',
-                icon: 'pi pi-fw pi-file'
-            }
-        ]
-    }
+                icon: 'pi pi-fw pi-file',
+            },
+        ],
+    },
 ]);
 
 const toggleMenu = (event) => {
@@ -423,7 +473,7 @@ const onContextRightClick = (event) => {
 
 <template>
     <div class="card">
-        <div class="font-semibold text-xl mb-4">Menubar</div>
+        <div class="mb-4 text-xl font-semibold">Menubar</div>
         <Menubar :model="nestedMenuitems">
             <template #end>
                 <IconField iconPosition="left">
@@ -435,14 +485,14 @@ const onContextRightClick = (event) => {
     </div>
 
     <div class="card">
-        <div class="font-semibold text-xl mb-4">Breadcrumb</div>
+        <div class="mb-4 text-xl font-semibold">Breadcrumb</div>
         <Breadcrumb :home="breadcrumbHome" :model="breadcrumbItems" />
     </div>
 
-    <div class="flex flex-col md:flex-row gap-8">
+    <div class="flex flex-col gap-8 md:flex-row">
         <div class="md:w-1/2">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Steps</div>
+                <div class="mb-4 text-xl font-semibold">Steps</div>
                 <Stepper value="1">
                     <StepList>
                         <Step value="1">Header I</Step>
@@ -454,7 +504,7 @@ const onContextRightClick = (event) => {
         </div>
         <div class="md:w-1/2">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">TabMenu</div>
+                <div class="mb-4 text-xl font-semibold">TabMenu</div>
                 <Tabs value="0">
                     <TabList>
                         <Tab value="0">Header I</Tab>
@@ -466,47 +516,57 @@ const onContextRightClick = (event) => {
         </div>
     </div>
 
-    <div class="flex flex-col md:flex-row gap-8 mt-6">
+    <div class="mt-6 flex flex-col gap-8 md:flex-row">
         <div class="md:w-1/3">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Tiered Menu</div>
+                <div class="mb-4 text-xl font-semibold">Tiered Menu</div>
                 <TieredMenu :model="tieredMenuItems" />
             </div>
         </div>
         <div class="md:w-1/3">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Plain Menu</div>
+                <div class="mb-4 text-xl font-semibold">Plain Menu</div>
                 <Menu :model="menuitems" />
             </div>
         </div>
         <div class="md:w-1/3">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">Overlay Menu</div>
+                <div class="mb-4 text-xl font-semibold">Overlay Menu</div>
                 <Menu ref="menu" :model="overlayMenuItems" :popup="true" />
-                <Button type="button" label="Options" icon="pi pi-angle-down" @click="toggleMenu" style="width: auto" />
+                <Button
+                    type="button"
+                    label="Options"
+                    icon="pi pi-angle-down"
+                    @click="toggleMenu"
+                    style="width: auto"
+                />
             </div>
 
             <div class="card" @contextmenu="onContextRightClick">
-                <div class="font-semibold text-xl mb-4">Context Menu</div>
+                <div class="mb-4 text-xl font-semibold">Context Menu</div>
                 Right click to display.
                 <ContextMenu ref="contextMenu" :model="contextMenuItems" />
             </div>
         </div>
     </div>
 
-    <div class="flex flex-col md:flex-row gap-8 mt-8">
+    <div class="mt-8 flex flex-col gap-8 md:flex-row">
         <div class="md:w-1/2">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">MegaMenu | Horizontal</div>
+                <div class="mb-4 text-xl font-semibold">
+                    MegaMenu | Horizontal
+                </div>
                 <MegaMenu :model="megamenuItems" />
 
-                <div class="font-semibold text-xl mb-4 mt-8">MegaMenu | Vertical</div>
+                <div class="mb-4 mt-8 text-xl font-semibold">
+                    MegaMenu | Vertical
+                </div>
                 <MegaMenu :model="megamenuItems" orientation="vertical" />
             </div>
         </div>
         <div class="md:w-1/2">
             <div class="card">
-                <div class="font-semibold text-xl mb-4">PanelMenu</div>
+                <div class="mb-4 text-xl font-semibold">PanelMenu</div>
                 <PanelMenu :model="panelMenuitems" />
             </div>
         </div>

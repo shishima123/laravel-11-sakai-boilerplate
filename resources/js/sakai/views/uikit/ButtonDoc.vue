@@ -4,19 +4,19 @@ import { ref } from 'vue';
 const items = ref([
     {
         label: 'Update',
-        icon: 'pi pi-refresh'
+        icon: 'pi pi-refresh',
     },
     {
         label: 'Delete',
-        icon: 'pi pi-times'
+        icon: 'pi pi-times',
     },
     {
-        separator: true
+        separator: true,
     },
     {
         label: 'Home',
-        icon: 'pi pi-home'
-    }
+        icon: 'pi pi-home',
+    },
 ]);
 
 const loading = ref([false, false, false]);
@@ -28,10 +28,10 @@ const load = (index) => {
 </script>
 
 <template>
-    <div class="flex flex-col md:flex-row gap-8">
+    <div class="flex flex-col gap-8 md:flex-row">
         <div class="md:w-1/2">
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">Default</div>
+                <div class="text-xl font-semibold">Default</div>
                 <div class="flex flex-wrap gap-2">
                     <Button label="Submit"></Button>
                     <Button label="Disabled" :disabled="true"></Button>
@@ -39,7 +39,7 @@ const load = (index) => {
                 </div>
             </div>
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">Severities</div>
+                <div class="text-xl font-semibold">Severities</div>
                 <div class="flex flex-wrap gap-2">
                     <Button label="Primary" />
                     <Button label="Secondary" severity="secondary" />
@@ -52,7 +52,7 @@ const load = (index) => {
                 </div>
             </div>
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">Text</div>
+                <div class="text-xl font-semibold">Text</div>
                 <div class="flex flex-wrap gap-2">
                     <Button label="Primary" text />
                     <Button label="Secondary" severity="secondary" text />
@@ -65,7 +65,7 @@ const load = (index) => {
                 </div>
             </div>
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">Outlined</div>
+                <div class="text-xl font-semibold">Outlined</div>
                 <div class="flex flex-wrap gap-2">
                     <Button label="Primary" outlined />
                     <Button label="Secondary" severity="secondary" outlined />
@@ -78,7 +78,7 @@ const load = (index) => {
                 </div>
             </div>
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">Group</div>
+                <div class="text-xl font-semibold">Group</div>
                 <div class="flex flex-wrap gap-2">
                     <ButtonGroup>
                         <Button label="Save" icon="pi pi-check" />
@@ -88,42 +88,87 @@ const load = (index) => {
                 </div>
             </div>
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">SplitButton</div>
+                <div class="text-xl font-semibold">SplitButton</div>
                 <div class="flex flex-wrap gap-2">
                     <SplitButton label="Save" :model="items"></SplitButton>
-                    <SplitButton label="Save" :model="items" severity="secondary"></SplitButton>
-                    <SplitButton label="Save" :model="items" severity="success"></SplitButton>
-                    <SplitButton label="Save" :model="items" severity="info"></SplitButton>
-                    <SplitButton label="Save" :model="items" severity="warn"></SplitButton>
-                    <SplitButton label="Save" :model="items" severity="help"></SplitButton>
-                    <SplitButton label="Save" :model="items" severity="danger"></SplitButton>
-                    <SplitButton label="Save" :model="items" severity="contrast"></SplitButton>
+                    <SplitButton
+                        label="Save"
+                        :model="items"
+                        severity="secondary"
+                    ></SplitButton>
+                    <SplitButton
+                        label="Save"
+                        :model="items"
+                        severity="success"
+                    ></SplitButton>
+                    <SplitButton
+                        label="Save"
+                        :model="items"
+                        severity="info"
+                    ></SplitButton>
+                    <SplitButton
+                        label="Save"
+                        :model="items"
+                        severity="warn"
+                    ></SplitButton>
+                    <SplitButton
+                        label="Save"
+                        :model="items"
+                        severity="help"
+                    ></SplitButton>
+                    <SplitButton
+                        label="Save"
+                        :model="items"
+                        severity="danger"
+                    ></SplitButton>
+                    <SplitButton
+                        label="Save"
+                        :model="items"
+                        severity="contrast"
+                    ></SplitButton>
                 </div>
             </div>
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">Templating</div>
+                <div class="text-xl font-semibold">Templating</div>
                 <div class="flex flex-wrap gap-2">
                     <Button type="button">
-                        <img alt="logo" src="/demo/images/logo-white.svg" style="width: 1.5rem" />
+                        <img
+                            alt="logo"
+                            src="/demo/images/logo-white.svg"
+                            style="width: 1.5rem"
+                        />
                     </Button>
                     <Button type="button" outlined severity="success">
-                        <img alt="logo" src="/demo/images/logo.svg" style="width: 1.5rem" />
-                        <span class="ml-2 text-bold">PrimeVue</span>
+                        <img
+                            alt="logo"
+                            src="/demo/images/logo.svg"
+                            style="width: 1.5rem"
+                        />
+                        <span class="text-bold ml-2">PrimeVue</span>
                     </Button>
                 </div>
             </div>
         </div>
         <div class="md:w-1/2">
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">Icons</div>
+                <div class="text-xl font-semibold">Icons</div>
                 <div class="flex flex-wrap gap-2">
-                    <Button icon="pi pi-star-fill" class="mr-2 mb-2"></Button>
-                    <Button label="Bookmark" icon="pi pi-bookmark" class="mr-2 mb-2"></Button>
-                    <Button label="Bookmark" icon="pi pi-bookmark" iconPos="right" class="mr-2 mb-2"></Button>
+                    <Button icon="pi pi-star-fill" class="mb-2 mr-2"></Button>
+                    <Button
+                        label="Bookmark"
+                        icon="pi pi-bookmark"
+                        class="mb-2 mr-2"
+                    ></Button>
+                    <Button
+                        label="Bookmark"
+                        icon="pi pi-bookmark"
+                        iconPos="right"
+                        class="mb-2 mr-2"
+                    ></Button>
                 </div>
             </div>
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">Raised</div>
+                <div class="text-xl font-semibold">Raised</div>
                 <div class="flex flex-wrap gap-2">
                     <Button label="Primary" raised />
                     <Button label="Secondary" severity="secondary" raised />
@@ -136,7 +181,7 @@ const load = (index) => {
                 </div>
             </div>
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">Rounded</div>
+                <div class="text-xl font-semibold">Rounded</div>
                 <div class="flex flex-wrap gap-2">
                     <Button label="Primary" rounded />
                     <Button label="Secondary" severity="secondary" rounded />
@@ -149,10 +194,14 @@ const load = (index) => {
                 </div>
             </div>
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">Rounded Icons</div>
+                <div class="text-xl font-semibold">Rounded Icons</div>
                 <div class="flex flex-wrap gap-2">
                     <Button icon="pi pi-check" rounded />
-                    <Button icon="pi pi-bookmark" severity="secondary" rounded />
+                    <Button
+                        icon="pi pi-bookmark"
+                        severity="secondary"
+                        rounded
+                    />
                     <Button icon="pi pi-search" severity="success" rounded />
                     <Button icon="pi pi-user" severity="info" rounded />
                     <Button icon="pi pi-bell" severity="warn" rounded />
@@ -161,36 +210,129 @@ const load = (index) => {
                 </div>
             </div>
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">Rounded Text</div>
+                <div class="text-xl font-semibold">Rounded Text</div>
                 <div class="flex flex-wrap gap-2">
                     <Button icon="pi pi-check" text raised rounded />
-                    <Button icon="pi pi-bookmark" severity="secondary" text raised rounded />
-                    <Button icon="pi pi-search" severity="success" text raised rounded />
-                    <Button icon="pi pi-user" severity="info" text raised rounded />
-                    <Button icon="pi pi-bell" severity="warn" text raised rounded />
-                    <Button icon="pi pi-heart" severity="help" text raised rounded />
-                    <Button icon="pi pi-times" severity="danger" text raised rounded />
+                    <Button
+                        icon="pi pi-bookmark"
+                        severity="secondary"
+                        text
+                        raised
+                        rounded
+                    />
+                    <Button
+                        icon="pi pi-search"
+                        severity="success"
+                        text
+                        raised
+                        rounded
+                    />
+                    <Button
+                        icon="pi pi-user"
+                        severity="info"
+                        text
+                        raised
+                        rounded
+                    />
+                    <Button
+                        icon="pi pi-bell"
+                        severity="warn"
+                        text
+                        raised
+                        rounded
+                    />
+                    <Button
+                        icon="pi pi-heart"
+                        severity="help"
+                        text
+                        raised
+                        rounded
+                    />
+                    <Button
+                        icon="pi pi-times"
+                        severity="danger"
+                        text
+                        raised
+                        rounded
+                    />
                 </div>
             </div>
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">Rounded Outlined</div>
+                <div class="text-xl font-semibold">Rounded Outlined</div>
                 <div class="flex flex-wrap gap-2">
                     <Button icon="pi pi-check" rounded outlined />
-                    <Button icon="pi pi-bookmark" severity="secondary" rounded outlined />
-                    <Button icon="pi pi-search" severity="success" rounded outlined />
-                    <Button icon="pi pi-user" severity="info" rounded outlined />
-                    <Button icon="pi pi-bell" severity="warn" rounded outlined />
-                    <Button icon="pi pi-heart" severity="help" rounded outlined />
-                    <Button icon="pi pi-times" severity="danger" rounded outlined />
+                    <Button
+                        icon="pi pi-bookmark"
+                        severity="secondary"
+                        rounded
+                        outlined
+                    />
+                    <Button
+                        icon="pi pi-search"
+                        severity="success"
+                        rounded
+                        outlined
+                    />
+                    <Button
+                        icon="pi pi-user"
+                        severity="info"
+                        rounded
+                        outlined
+                    />
+                    <Button
+                        icon="pi pi-bell"
+                        severity="warn"
+                        rounded
+                        outlined
+                    />
+                    <Button
+                        icon="pi pi-heart"
+                        severity="help"
+                        rounded
+                        outlined
+                    />
+                    <Button
+                        icon="pi pi-times"
+                        severity="danger"
+                        rounded
+                        outlined
+                    />
                 </div>
             </div>
             <div class="card flex flex-col gap-4">
-                <div class="font-semibold text-xl">Loading</div>
+                <div class="text-xl font-semibold">Loading</div>
                 <div class="flex flex-wrap gap-2">
-                    <Button type="button" class="mr-2 mb-2" label="Search" icon="pi pi-search" :loading="loading[0]" @click="load(0)" />
-                    <Button type="button" class="mr-2 mb-2" label="Search" icon="pi pi-search" iconPos="right" :loading="loading[1]" @click="load(1)" />
-                    <Button type="button" class="mr-2 mb-2" icon="pi pi-search" :loading="loading[2]" @click="load(2)" />
-                    <Button type="button" class="mr-2 mb-2" label="Search" :loading="loading[3]" @click="load(3)" />
+                    <Button
+                        type="button"
+                        class="mb-2 mr-2"
+                        label="Search"
+                        icon="pi pi-search"
+                        :loading="loading[0]"
+                        @click="load(0)"
+                    />
+                    <Button
+                        type="button"
+                        class="mb-2 mr-2"
+                        label="Search"
+                        icon="pi pi-search"
+                        iconPos="right"
+                        :loading="loading[1]"
+                        @click="load(1)"
+                    />
+                    <Button
+                        type="button"
+                        class="mb-2 mr-2"
+                        icon="pi pi-search"
+                        :loading="loading[2]"
+                        @click="load(2)"
+                    />
+                    <Button
+                        type="button"
+                        class="mb-2 mr-2"
+                        label="Search"
+                        :loading="loading[3]"
+                        @click="load(3)"
+                    />
                 </div>
             </div>
         </div>

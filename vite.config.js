@@ -5,6 +5,13 @@ import Components from 'unplugin-vue-components/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+    css: {
+        preprocessorOptions: {
+            scss: {
+                api: 'modern-compiler', // or "modern"
+            },
+        },
+    },
     plugins: [
         laravel({
             input: 'resources/js/app.js',

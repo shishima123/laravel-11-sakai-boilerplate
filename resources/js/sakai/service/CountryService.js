@@ -201,7 +201,10 @@ export const CountryService = {
             { name: 'Solomon Islands', code: 'SB' },
             { name: 'Somalia', code: 'SO' },
             { name: 'South Africa', code: 'ZA' },
-            { name: 'South Georgia and the South Sandwich Islands', code: 'GS' },
+            {
+                name: 'South Georgia and the South Sandwich Islands',
+                code: 'GS',
+            },
             { name: 'Spain', code: 'ES' },
             { name: 'Sri Lanka', code: 'LK' },
             { name: 'Sudan', code: 'SD' },
@@ -242,11 +245,11 @@ export const CountryService = {
             { name: 'Western Sahara', code: 'EH' },
             { name: 'Yemen', code: 'YE' },
             { name: 'Zambia', code: 'ZM' },
-            { name: 'Zimbabwe', code: 'ZW' }
+            { name: 'Zimbabwe', code: 'ZW' },
         ];
     },
 
     getCountries() {
         return Promise.resolve(this.getData());
-    }
+    },
 };

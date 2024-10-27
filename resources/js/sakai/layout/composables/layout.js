@@ -5,7 +5,7 @@ const layoutConfig = reactive({
     primary: 'emerald',
     surface: null,
     darkTheme: false,
-    menuMode: 'static'
+    menuMode: 'static',
 });
 
 const layoutState = reactive({
@@ -15,7 +15,7 @@ const layoutState = reactive({
     configSidebarVisible: false,
     staticMenuMobileActive: false,
     menuHoverActive: false,
-    activeMenuItem: null
+    activeMenuItem: null,
 });
 
 export function useLayout() {
@@ -60,9 +60,11 @@ export function useLayout() {
         }
 
         if (window.innerWidth > 991) {
-            layoutState.staticMenuDesktopInactive = !layoutState.staticMenuDesktopInactive;
+            layoutState.staticMenuDesktopInactive =
+                !layoutState.staticMenuDesktopInactive;
         } else {
-            layoutState.staticMenuMobileActive = !layoutState.staticMenuMobileActive;
+            layoutState.staticMenuMobileActive =
+                !layoutState.staticMenuMobileActive;
         }
     };
 
@@ -72,7 +74,10 @@ export function useLayout() {
         layoutState.menuHoverActive = false;
     };
 
-    const isSidebarActive = computed(() => layoutState.overlayMenuActive || layoutState.staticMenuMobileActive);
+    const isSidebarActive = computed(
+        () =>
+            layoutState.overlayMenuActive || layoutState.staticMenuMobileActive,
+    );
 
     const isDarkTheme = computed(() => layoutConfig.darkTheme);
 
@@ -80,5 +85,20 @@ export function useLayout() {
 
     const getSurface = computed(() => layoutConfig.surface);
 
-    return { layoutConfig: readonly(layoutConfig), layoutState: readonly(layoutState), onMenuToggle, isSidebarActive, isDarkTheme, getPrimary, getSurface, setActiveMenuItem, toggleDarkMode, setPrimary, setSurface, setPreset, resetMenu, setMenuMode };
+    return {
+        layoutConfig: readonly(layoutConfig),
+        layoutState: readonly(layoutState),
+        onMenuToggle,
+        isSidebarActive,
+        isDarkTheme,
+        getPrimary,
+        getSurface,
+        setActiveMenuItem,
+        toggleDarkMode,
+        setPrimary,
+        setSurface,
+        setPreset,
+        resetMenu,
+        setMenuMode,
+    };
 }
