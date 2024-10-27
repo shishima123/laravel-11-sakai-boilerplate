@@ -31,6 +31,10 @@ createInertiaApp({
                     options: {
                         darkModeSelector: '.app-dark',
                     },
+                    cssLayer: {
+                        name: 'primevue',
+                        order: 'tailwind-base, primevue, tailwind-utilities',
+                    },
                 },
             })
             .use(ToastService)
