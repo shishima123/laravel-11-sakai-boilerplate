@@ -2,12 +2,13 @@
 import { useLayout } from '@/sakai/layout/composables/layout';
 import AppConfigurator from './AppConfigurator.vue';
 import DropdownLink from '@/Components/DropdownLink.vue';
-import { Link } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 
 const { onMenuToggle, toggleDarkMode, isDarkTheme } = useLayout();
 </script>
 
 <template>
+    <Head title="Dashboard" />
     <div class="layout-topbar">
         <div class="layout-topbar-logo-container">
             <button
@@ -87,6 +88,7 @@ const { onMenuToggle, toggleDarkMode, isDarkTheme } = useLayout();
                 </div>
             </div>
 
+            <!-- mobile navigation  -->
             <button
                 class="layout-topbar-menu-button layout-topbar-action"
                 v-styleclass="{
@@ -129,11 +131,16 @@ const { onMenuToggle, toggleDarkMode, isDarkTheme } = useLayout();
                             >
                                 Log Out
                             </DropdownLink>
-                            <!-- <button class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</button> -->
+                            <button
+                                class="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+                            >
+                                Logout
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- /.mobile navigation  -->
         </div>
     </div>
 </template>
