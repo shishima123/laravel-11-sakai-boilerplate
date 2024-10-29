@@ -23,6 +23,7 @@ const items = ref([
                 icon: 'pi pi-sign-out',
                 href: route('logout'),
                 method: 'post',
+                as: 'button',
             },
         ],
     },
@@ -58,6 +59,7 @@ defineExpose({
                 v-bind="props.action"
                 :href="item.href"
                 :method="item.method"
+                :as="item.as"
             >
                 <span :class="item.icon" />
                 <span>{{ item.label }}</span>

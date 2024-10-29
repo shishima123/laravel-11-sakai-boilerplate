@@ -1,6 +1,6 @@
 <script setup>
-import { useLayout } from '@/sakai/layout/composables/layout';
-import AppConfigurator from './AppConfigurator.vue';
+import { useLayout } from '@/Layouts/composables/layout.js';
+import AppConfigurator from '@/Layouts/AppConfigurator.vue';
 import { Link } from '@inertiajs/vue3';
 import ProfileMenu from '@/Components/ProfileMenu.vue';
 import { useTemplateRef } from 'vue';

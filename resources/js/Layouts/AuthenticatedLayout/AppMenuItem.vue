@@ -1,5 +1,5 @@
 <script setup>
-import { useLayout } from '@/sakai/layout/composables/layout';
+import { useLayout } from '@/Layouts/composables/layout.js';
 import { onBeforeMount, ref, watch } from 'vue';
 import { Link } from '@inertiajs/vue3';
 

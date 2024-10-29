@@ -10,7 +10,7 @@ import ToastService from 'primevue/toastservice';
 import { createApp, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 
-import '@/sakai/assets/styles.scss';
+import '../css/assets/styles.scss';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 

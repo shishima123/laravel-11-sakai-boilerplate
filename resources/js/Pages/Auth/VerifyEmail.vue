@@ -2,7 +2,7 @@
 import { computed } from 'vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import FloatingConfigurator from '@/sakai/components/FloatingConfigurator.vue';
+import FloatingConfigurator from '@/Components/FloatingConfigurator.vue';
 
 const props = defineProps({
     status: {

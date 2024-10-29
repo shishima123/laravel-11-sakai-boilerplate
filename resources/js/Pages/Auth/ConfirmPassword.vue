@@ -2,7 +2,7 @@
 import InputError from '@/Components/InputError.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import FloatingConfigurator from '@/sakai/components/FloatingConfigurator.vue';
+import FloatingConfigurator from '@/Components/FloatingConfigurator.vue';
 import LabelInput from '@/Components/LabelInput.vue';
 
 const form = useForm({

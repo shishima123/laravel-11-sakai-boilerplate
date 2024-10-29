@@ -1,6 +1,6 @@
 <script setup>
-import AppConfigurator from '@/sakai/layout/AppConfigurator.vue';
-import { useLayout } from '@/sakai/layout/composables/layout';
+import AppConfigurator from '@/Layouts/AppConfigurator.vue';
+import { useLayout } from '@/Layouts/composables/layout.js';
 
 const { toggleDarkMode, isDarkTheme } = useLayout();
 </script>

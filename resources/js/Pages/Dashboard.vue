@@ -1,5 +1,5 @@
 <script setup>
-import AppLayout from '@/sakai/layout/AppLayout.vue';
+import AppLayout from '@/Layouts/AuthenticatedLayout/AppLayout.vue';
 import { Head } from '@inertiajs/vue3';
 
 const props = defineProps({

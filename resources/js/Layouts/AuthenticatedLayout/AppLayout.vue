@@ -1,5 +1,5 @@
 <script setup>
-import { useLayout } from '@/sakai/layout/composables/layout';
+import { useLayout } from '@/Layouts/composables/layout.js';
 import { computed, ref, watch } from 'vue';
 import AppFooter from './AppFooter.vue';
 import AppSidebar from './AppSidebar.vue';
