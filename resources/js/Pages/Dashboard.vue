@@ -1,17 +1,33 @@
 <script setup>
-import AppLayout from '@/Layouts/AuthenticatedLayout/AppLayout.vue';
 import { Head } from '@inertiajs/vue3';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import { ref } from 'vue';
+import BreadcrumbLink from '@/Components/BreadcrumbLink.vue';
 
 const props = defineProps({
     users: Number,
     roles: Number,
     permissions: Number,
 });
+
+const breadCrumbItems = ref([{ label: 'Dashboard' }]);
+
+// const items = ref([
+//     { icon: 'pi pi-home', label: 'Home', route: route('profile.edit') },
+//     { icon: 'pi pi-home', label: 'Components', url: 'https://google.com' },
+//     { label: 'Form', route: route('profile.edit') },
+//     { label: 'InputText' },
+// ]);
 </script>
 
 <template>
     <Head title="Dashboard" />
-    <app-layout>
+
+    <Teleport defer to="#topbar-action-left">
+        <BreadcrumbLink :items="breadCrumbItems" />
+    </Teleport>
+
+    <AuthenticatedLayout>
         <div class="grid grid-cols-12 gap-8">
             <div class="col-span-12 lg:col-span-6 xl:col-span-4">
                 <div class="card mb-0">
@@ -19,8 +35,9 @@ const props = defineProps({
                         <div>
                             <span
                                 class="mb-4 block font-medium text-muted-color"
-                                >User</span
                             >
+                                User
+                            </span>
                             <div
                                 class="text-xl font-medium text-surface-900 dark:text-surface-0"
                             >
@@ -42,8 +59,9 @@ const props = defineProps({
                         <div>
                             <span
                                 class="mb-4 block font-medium text-muted-color"
-                                >Role</span
                             >
+                                Role
+                            </span>
                             <div
                                 class="text-xl font-medium text-surface-900 dark:text-surface-0"
                             >
@@ -67,8 +85,9 @@ const props = defineProps({
                         <div>
                             <span
                                 class="mb-4 block font-medium text-muted-color"
-                                >Permission</span
                             >
+                                Permission
+                            </span>
                             <div
                                 class="text-xl font-medium text-surface-900 dark:text-surface-0"
                             >
@@ -85,7 +104,7 @@ const props = defineProps({
                 </div>
             </div>
         </div>
-    </app-layout>
+    </AuthenticatedLayout>
 </template>
 
 <style scoped lang="scss"></style>

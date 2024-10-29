@@ -4,6 +4,8 @@ import DeleteUserForm from './Partials/DeleteUserForm.vue';
 import UpdatePasswordForm from './Partials/UpdatePasswordForm.vue';
 import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.vue';
 import { Head } from '@inertiajs/vue3';
+import BreadcrumbLink from '@/Components/BreadcrumbLink.vue';
+import { ref } from 'vue';
 
 defineProps({
     mustVerifyEmail: {
@@ -13,10 +15,16 @@ defineProps({
         type: String,
     },
 });
+
+const breadCrumbItems = ref([{ label: 'Profile' }]);
 </script>
 
 <template>
     <Head title="Profile" />
+
+    <Teleport defer to="#topbar-action-left">
+        <BreadcrumbLink :items="breadCrumbItems" />
+    </Teleport>
 
     <AuthenticatedLayout>
         <template #header>

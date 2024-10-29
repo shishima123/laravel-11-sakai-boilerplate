@@ -57,67 +57,73 @@ const profileMenu = useTemplateRef('profileMenu');
             </Link>
         </div>
 
-        <div class="layout-topbar-actions">
-            <div class="layout-config-menu">
-                <button
-                    type="button"
-                    class="layout-topbar-action"
-                    @click="toggleDarkMode"
-                >
-                    <i
-                        :class="[
-                            'pi',
-                            { 'pi-moon': isDarkTheme, 'pi-sun': !isDarkTheme },
-                        ]"
-                    ></i>
-                </button>
-                <div class="relative">
+        <div class="layout-topbar-actions justify-between">
+            <div class="flex" id="topbar-action-left"></div>
+            <div class="flex items-center gap-4">
+                <div class="layout-config-menu">
                     <button
-                        v-styleclass="{
-                            selector: '@next',
-                            enterFromClass: 'hidden',
-                            enterActiveClass: 'animate-scalein',
-                            leaveToClass: 'hidden',
-                            leaveActiveClass: 'animate-fadeout',
-                            hideOnOutsideClick: true,
-                        }"
                         type="button"
-                        class="layout-topbar-action layout-topbar-action-highlight"
+                        class="layout-topbar-action"
+                        @click="toggleDarkMode"
                     >
-                        <i class="pi pi-palette"></i>
+                        <i
+                            :class="[
+                                'pi',
+                                {
+                                    'pi-moon': isDarkTheme,
+                                    'pi-sun': !isDarkTheme,
+                                },
+                            ]"
+                        ></i>
                     </button>
-                    <AppConfigurator />
-                </div>
-            </div>
-
-            <!-- mobile navigation  -->
-            <button
-                class="layout-topbar-menu-button layout-topbar-action"
-                v-styleclass="{
-                    selector: '@next',
-                    enterFromClass: 'hidden',
-                    enterActiveClass: 'animate-scalein',
-                    leaveToClass: 'hidden',
-                    leaveActiveClass: 'animate-fadeout',
-                    hideOnOutsideClick: true,
-                }"
-            >
-                <i class="pi pi-ellipsis-v"></i>
-            </button>
-            <!-- /.mobile navigation  -->
-
-            <div class="layout-topbar-menu hidden lg:block">
-                <div class="layout-topbar-menu-content">
                     <div class="relative">
                         <button
+                            v-styleclass="{
+                                selector: '@next',
+                                enterFromClass: 'hidden',
+                                enterActiveClass: 'animate-scalein',
+                                leaveToClass: 'hidden',
+                                leaveActiveClass: 'animate-fadeout',
+                                hideOnOutsideClick: true,
+                            }"
                             type="button"
-                            class="layout-topbar-action"
-                            @click="profileMenu.toggleProfileMenu"
+                            class="layout-topbar-action layout-topbar-action-highlight"
                         >
-                            <i class="pi pi-user"></i>
-                            <span>Profile</span>
+                            <i class="pi pi-palette"></i>
                         </button>
-                        <ProfileMenu ref="profileMenu" />
+                        <AppConfigurator />
+                    </div>
+                </div>
+
+                <!-- mobile navigation  -->
+                <button
+                    class="layout-topbar-menu-button layout-topbar-action"
+                    v-styleclass="{
+                        selector: '@next',
+                        enterFromClass: 'hidden',
+                        enterActiveClass: 'animate-scalein',
+                        leaveToClass: 'hidden',
+                        leaveActiveClass: 'animate-fadeout',
+                        hideOnOutsideClick: true,
+                    }"
+                >
+                    <i class="pi pi-ellipsis-v"></i>
+                </button>
+                <!-- /.mobile navigation  -->
+
+                <div class="layout-topbar-menu hidden lg:block">
+                    <div class="layout-topbar-menu-content">
+                        <div class="relative">
+                            <button
+                                type="button"
+                                class="layout-topbar-action"
+                                @click="profileMenu.toggleProfileMenu"
+                            >
+                                <i class="pi pi-user"></i>
+                                <span>Profile</span>
+                            </button>
+                            <ProfileMenu ref="profileMenu" />
+                        </div>
                     </div>
                 </div>
             </div>
