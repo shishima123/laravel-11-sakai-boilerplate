@@ -1,14 +1,16 @@
 <script setup>
 import { useLayout } from '@/sakai/layout/composables/layout';
 import AppConfigurator from './AppConfigurator.vue';
-import DropdownLink from '@/Components/DropdownLink.vue';
-import { Head, Link } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
+import ProfileMenu from '@/Components/ProfileMenu.vue';
+import { useTemplateRef } from 'vue';
 
 const { onMenuToggle, toggleDarkMode, isDarkTheme } = useLayout();
+
+const profileMenu = useTemplateRef('profileMenu');
 </script>
 
 <template>
-    <Head title="Dashboard" />
     <div class="layout-topbar">
         <div class="layout-topbar-logo-container">
             <button
@@ -102,6 +104,7 @@ const { onMenuToggle, toggleDarkMode, isDarkTheme } = useLayout();
             >
                 <i class="pi pi-ellipsis-v"></i>
             </button>
+            <!-- /.mobile navigation  -->
 
             <div class="layout-topbar-menu hidden lg:block">
                 <div class="layout-topbar-menu-content">
@@ -109,38 +112,15 @@ const { onMenuToggle, toggleDarkMode, isDarkTheme } = useLayout();
                         <button
                             type="button"
                             class="layout-topbar-action"
-                            v-styleclass="{
-                                selector: '@next',
-                                enterFromClass: 'hidden',
-                                enterActiveClass: 'animate-scalein',
-                                leaveToClass: 'hidden',
-                                leaveActiveClass: 'animate-fadeout',
-                                hideOnOutsideClick: true,
-                            }"
+                            @click="profileMenu.toggleProfileMenu"
                         >
                             <i class="pi pi-user"></i>
                             <span>Profile</span>
                         </button>
-                        <div
-                            class="absolute right-0 mt-2 hidden w-48 rounded-md bg-white py-2 shadow-md"
-                        >
-                            <DropdownLink
-                                :href="route('logout')"
-                                method="post"
-                                as="button"
-                            >
-                                Log Out
-                            </DropdownLink>
-                            <button
-                                class="w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
-                            >
-                                Logout
-                            </button>
-                        </div>
+                        <ProfileMenu ref="profileMenu" />
                     </div>
                 </div>
             </div>
-            <!-- /.mobile navigation  -->
         </div>
     </div>
 </template>

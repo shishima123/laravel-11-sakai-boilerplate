@@ -1,5 +1,6 @@
 <script setup>
 import AppLayout from '@/sakai/layout/AppLayout.vue';
+import { Head } from '@inertiajs/vue3';
 
 const props = defineProps({
     users: Number,
@@ -9,6 +10,7 @@ const props = defineProps({
 </script>
 
 <template>
+    <Head title="Dashboard" />
     <app-layout>
         <div class="grid grid-cols-12 gap-8">
             <div class="col-span-12 lg:col-span-6 xl:col-span-4">
