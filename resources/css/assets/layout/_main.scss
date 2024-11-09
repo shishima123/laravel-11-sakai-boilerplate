@@ -1,0 +1,20 @@
+.layout-main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    padding-top: 4rem;
+    transition: margin-left var(--layout-section-transition-duration);
+}
+
+.layout-breadcrumb-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+.layout-main {
+    flex: 1 1 auto;
+    padding: 2rem;
+}

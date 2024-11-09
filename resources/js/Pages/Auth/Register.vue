@@ -1,113 +1,121 @@
 <script setup>
-import GuestLayout from '@/Layouts/GuestLayout.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import InputError from '@/Components/InputError.vue'
+import { Head, Link, useForm } from '@inertiajs/vue3'
+import InputLabel from '@/Components/InputLabel.vue'
+import ApplicationLogo from '@/Components/ApplicationLogo.vue'
+import FloatingConfigurator from '@/Components/FloatingConfigurator.vue'
 
 const form = useForm({
     name: '',
     email: '',
     password: '',
-    password_confirmation: '',
-});
+    password_confirmation: ''
+})
 
 const submit = () => {
     form.post(route('register'), {
-        onFinish: () => form.reset('password', 'password_confirmation'),
-    });
-};
+        onFinish: () => form.reset('password', 'password_confirmation')
+    })
+}
 </script>
 
 <template>
-    <GuestLayout>
-        <Head title="Register" />
-
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="name" value="Name" />
-
-                <TextInput
-                    id="name"
-                    type="text"
-                    class="mt-1 block w-full"
-                    v-model="form.name"
-                    required
-                    autofocus
-                    autocomplete="name"
-                />
-
-                <InputError class="mt-2" :message="form.errors.name" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="email" value="Email" />
-
-                <TextInput
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autocomplete="username"
-                />
-
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-
-                <TextInput
-                    id="password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password"
-                    required
-                    autocomplete="new-password"
-                />
-
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel
-                    for="password_confirmation"
-                    value="Confirm Password"
-                />
-
-                <TextInput
-                    id="password_confirmation"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password_confirmation"
-                    required
-                    autocomplete="new-password"
-                />
-
-                <InputError
-                    class="mt-2"
-                    :message="form.errors.password_confirmation"
-                />
-            </div>
-
-            <div class="mt-4 flex items-center justify-end">
-                <Link
-                    :href="route('login')"
-                    class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+    <Head title="Register" />
+    <FloatingConfigurator />
+    <div
+        class="flex min-h-screen min-w-[100vw] items-center justify-center overflow-hidden bg-surface-50 dark:bg-surface-950"
+    >
+        <div class="flex flex-col items-center justify-center">
+            <div
+                style="
+                    border-radius: 56px;
+                    padding: 0.3rem;
+                    background: linear-gradient(
+                        180deg,
+                        var(--primary-color) 10%,
+                        rgba(33, 150, 243, 0) 30%
+                    );
+                "
+            >
+                <div
+                    class="w-full bg-surface-0 px-8 py-20 sm:px-20 dark:bg-surface-900"
+                    style="border-radius: 53px"
                 >
-                    Already registered?
-                </Link>
+                    <div class="mb-8 text-center">
+                        <ApplicationLogo />
+                        <div class="mb-4 text-3xl font-medium text-surface-900 dark:text-surface-0">
+                            Welcome to PrimeLand!
+                        </div>
+                        <span class="font-medium text-muted-color">Sign up to continue</span>
+                    </div>
 
-                <PrimaryButton
-                    class="ms-4"
-                    :class="{ 'opacity-25': form.processing }"
-                    :disabled="form.processing"
-                >
-                    Register
-                </PrimaryButton>
+                    <form @submit.prevent="submit">
+                        <div>
+                            <InputLabel for="name" value="Name" />
+                            <InputText
+                                id="name"
+                                type="text"
+                                placeholder="Name"
+                                class="w-full md:w-[30rem]"
+                                v-model="form.name"
+                                :invalid="form.errors.name?.length > 0"
+                            />
+                            <InputError class="mt-2" :message="form.errors.name" />
+
+                            <InputLabel class="mt-3" for="email" value="Email" />
+                            <InputText
+                                id="email"
+                                type="text"
+                                placeholder="Email"
+                                class="w-full md:w-[30rem]"
+                                v-model="form.email"
+                                :invalid="form.errors.email?.length > 0"
+                            />
+                            <InputError class="mt-2" :message="form.errors.email" />
+
+                            <InputLabel class="mt-3" for="password" value="Password" />
+                            <Password
+                                id="password"
+                                v-model="form.password"
+                                placeholder="Password"
+                                :toggleMask="true"
+                                fluid
+                                :feedback="false"
+                                :invalid="form.errors.password?.length > 0"
+                            ></Password>
+                            <InputError class="mt-2" :message="form.errors.password" />
+
+                            <InputLabel
+                                class="mt-3"
+                                for="password_confirmation"
+                                value="Confirm Password"
+                            />
+                            <Password
+                                id="password_confirmation"
+                                v-model="form.password_confirmation"
+                                placeholder="Confirm Password"
+                                :toggleMask="true"
+                                fluid
+                                :feedback="false"
+                                :invalid="form.errors.password_confirmation?.length > 0"
+                            ></Password>
+                            <InputError class="mt-2" :message="form.errors.password_confirmation" />
+
+                            <Button type="submit" label="Sign Up" class="mb-4 mt-8 w-full"></Button>
+
+                            <span class="font-medium text-surface-600 dark:text-surface-200">
+                                Already have an account?
+                                <Link
+                                    :href="route('login')"
+                                    class="cursor-pointer font-semibold text-surface-900 transition-colors duration-300 hover:text-primary dark:text-surface-0"
+                                >
+                                    Sign in
+                                </Link>
+                            </span>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </form>
-    </GuestLayout>
+        </div>
+    </div>
 </template>

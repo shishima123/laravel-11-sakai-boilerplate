@@ -1,13 +1,13 @@
 <script setup>
 defineProps({
     value: {
-        type: String,
-    },
-});
+        type: String
+    }
+})
 </script>
 
 <template>
-    <label class="block text-sm font-medium text-gray-700">
+    <label class="mb-2 block text-xl font-medium text-surface-900 dark:text-surface-0">
         <span v-if="value">{{ value }}</span>
         <span v-else><slot /></span>
     </label>

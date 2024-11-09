@@ -1,100 +1,132 @@
 <script setup>
-import Checkbox from '@/Components/Checkbox.vue';
-import GuestLayout from '@/Layouts/GuestLayout.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import { Head, useForm, Link } from '@inertiajs/vue3'
+import InputLabel from '@/Components/InputLabel.vue'
+import FloatingConfigurator from '@/Components/FloatingConfigurator.vue'
+import ApplicationLogo from '@/Components/ApplicationLogo.vue'
+import InputError from '@/Components/InputError.vue'
 
 defineProps({
     canResetPassword: {
-        type: Boolean,
+        type: Boolean
     },
     status: {
-        type: String,
-    },
-});
+        type: String
+    }
+})
 
 const form = useForm({
     email: '',
     password: '',
-    remember: false,
-});
+    remember: false
+})
 
 const submit = () => {
     form.post(route('login'), {
-        onFinish: () => form.reset('password'),
-    });
-};
+        onFinish: () => form.reset('password')
+    })
+}
 </script>
 
 <template>
-    <GuestLayout>
-        <Head title="Log in" />
+    <Head title="Login" />
+    <FloatingConfigurator />
+    <div
+        class="flex min-h-screen min-w-[100vw] items-center justify-center overflow-hidden bg-surface-50 dark:bg-surface-950"
+    >
+        <div class="flex flex-col items-center justify-center">
+            <div
+                style="
+                    border-radius: 56px;
+                    padding: 0.3rem;
+                    background: linear-gradient(
+                        180deg,
+                        var(--primary-color) 10%,
+                        rgba(33, 150, 243, 0) 30%
+                    );
+                "
+            >
+                <div
+                    class="w-full bg-surface-0 px-8 py-20 sm:px-20 dark:bg-surface-900"
+                    style="border-radius: 53px"
+                >
+                    <div class="mb-8 text-center">
+                        <ApplicationLogo />
+                        <div class="mb-4 text-3xl font-medium text-surface-900 dark:text-surface-0">
+                            Welcome to PrimeLand!
+                        </div>
+                        <span class="font-medium text-muted-color"> Sign in to continue </span>
+                    </div>
 
-        <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
-            {{ status }}
+                    <form @submit.prevent="submit">
+                        <Message severity="success" class="mb-4" v-if="status">
+                            {{ status }}
+                        </Message>
+                        <div>
+                            <InputLabel for="email" value="Email" />
+                            <InputText
+                                id="email"
+                                type="text"
+                                placeholder="Email"
+                                class="w-full md:w-[30rem]"
+                                v-model="form.email"
+                                :invalid="form.errors.email?.length > 0"
+                            />
+                            <InputError class="mt-2" :message="form.errors.email" />
+
+                            <InputLabel class="mt-3" for="password" value="Password" />
+                            <Password
+                                id="password"
+                                v-model="form.password"
+                                placeholder="Password"
+                                :toggleMask="true"
+                                fluid
+                                :feedback="false"
+                                :invalid="form.errors.password?.length > 0"
+                            ></Password>
+                            <InputError class="mt-2" :message="form.errors.password" />
+
+                            <div class="mb-8 mt-3 flex items-center justify-between gap-8">
+                                <div class="flex items-center">
+                                    <Checkbox
+                                        v-model="form.remember"
+                                        id="remember"
+                                        binary
+                                        class="mr-2"
+                                    ></Checkbox>
+                                    <label for="remember">Remember me</label>
+                                </div>
+
+                                <Link
+                                    v-if="canResetPassword"
+                                    :href="route('password.request')"
+                                    class="ml-2 cursor-pointer text-right font-medium text-primary no-underline"
+                                >
+                                    Forgot password?
+                                </Link>
+                            </div>
+                            <Button
+                                type="submit"
+                                label="Sign In"
+                                class="mb-3 w-full"
+                                :class="{ 'opacity-25': form.processing }"
+                                :disabled="form.processing"
+                            ></Button>
+
+                            <span class="font-medium text-surface-600 dark:text-surface-200">
+                                Don't have account?
+                                <Link
+                                    :href="route('register')"
+                                    class="cursor-pointer font-semibold text-surface-900 transition-colors duration-300 hover:text-primary dark:text-surface-0"
+                                >
+                                    Sign up
+                                </Link>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <form @submit.prevent="submit">
-            <div>
-                <InputLabel for="email" value="Email" />
-
-                <TextInput
-                    id="email"
-                    type="email"
-                    class="mt-1 block w-full"
-                    v-model="form.email"
-                    required
-                    autofocus
-                    autocomplete="username"
-                />
-
-                <InputError class="mt-2" :message="form.errors.email" />
-            </div>
-
-            <div class="mt-4">
-                <InputLabel for="password" value="Password" />
-
-                <TextInput
-                    id="password"
-                    type="password"
-                    class="mt-1 block w-full"
-                    v-model="form.password"
-                    required
-                    autocomplete="current-password"
-                />
-
-                <InputError class="mt-2" :message="form.errors.password" />
-            </div>
-
-            <div class="mt-4 block">
-                <label class="flex items-center">
-                    <Checkbox name="remember" v-model:checked="form.remember" />
-                    <span class="ms-2 text-sm text-gray-600"
-                        >Remember me</span
-                    >
-                </label>
-            </div>
-
-            <div class="mt-4 flex items-center justify-end">
-                <Link
-                    v-if="canResetPassword"
-                    :href="route('password.request')"
-                    class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                >
-                    Forgot your password?
-                </Link>
-
-                <PrimaryButton
-                    class="ms-4"
-                    :class="{ 'opacity-25': form.processing }"
-                    :disabled="form.processing"
-                >
-                    Log in
-                </PrimaryButton>
-            </div>
-        </form>
-    </GuestLayout>
+    </div>
 </template>
+
+<style scoped></style>
